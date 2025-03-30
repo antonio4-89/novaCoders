@@ -1,0 +1,87 @@
+[
+  {
+    "img": "https://images.vexels.com/media/users/3/144007/isolated/svg/6150d0cfaabb9b2fc29008ee0f8cf099.svg",
+    "nombreProducto": "Pizza Margarita",
+    "precio": 12.99,
+    "ingredientes": [
+      { "nombre": "Masa de pizza" },
+      { "nombre": "Salsa de tomate" },
+      { "nombre": "Queso mozzarella" }
+    ]
+  },
+  {
+    "img": "https://images.vexels.com/media/users/3/144007/isolated/svg/6150d0cfaabb9b2fc29008ee0f8cf099.svg",
+    "nombreProducto": "Hamburguesa Clásica",
+    "precio": 9.99,
+    "ingredientes": [
+      { "nombre": "Carne de res" },
+      { "nombre": "Pan de hamburguesa" },
+      { "nombre": "Lechuga" },
+      { "nombre": "Tomate" }
+    ]
+  },
+  {
+    "img": "https://images.vexels.com/media/users/3/144007/isolated/svg/6150d0cfaabb9b2fc29008ee0f8cf099.svg",
+    "nombreProducto": "Ensalada de Pollo",
+    "precio": 10.99,
+    "ingredientes": [
+      { "nombre": "Pollo a la parrilla" },
+      { "nombre": "Lechuga" },
+      { "nombre": "Tomate" },
+      { "nombre": "Cebolla" }
+    ]
+  },
+  {
+    "img": "https://images.vexels.com/media/users/3/144007/isolated/svg/6150d0cfaabb9b2fc29008ee0f8cf099.svg",
+    "nombreProducto": "Tacos de Carnitas",
+    "precio": 11.99,
+    "ingredientes": [
+      { "nombre": "Carnitas de cerdo" },
+      { "nombre": "Tortillas de maíz" },
+      { "nombre": "Salsa de tomate" },
+      { "nombre": "Cebolla" }
+    ]
+  },
+  {
+    "img": "https://images.vexels.com/media/users/3/144007/isolated/svg/6150d0cfaabb9b2fc29008ee0f8cf099.svg",
+    "nombreProducto": "Sushi Roll",
+    "precio": 14.99,
+    "ingredientes": [
+      { "nombre": "Arroz de sushi" },
+      { "nombre": "Pescado crudo" },
+      { "nombre": "Aguacate" }
+    ]
+  },
+  {
+    "img": "https://images.vexels.com/media/users/3/144007/isolated/svg/6150d0cfaabb9b2fc29008ee0f8cf099.svg",
+    "nombreProducto": "Chili con Carne",
+    "precio": 12.99,
+    "ingredientes": [
+      { "nombre": "Carne de res" },
+      { "nombre": "Frijoles negros" },
+      { "nombre": "Tomate" },
+      { "nombre": "Cebolla" }
+    ]
+  },
+  {
+    "img": "https://images.vexels.com/media/users/3/144007/isolated/svg/6150d0cfaabb9b2fc29008ee0f8cf099.svg",
+    "nombreProducto": "Pollo al Curry",
+    "precio": 13.99,
+    "ingredientes": [
+      { "nombre": "Pollo a la parrilla" },
+      { "nombre": "Salsa de curry" },
+      { "nombre": "Arroz de basmati" }
+    ]
+  },
+  {
+    "img": "https://images.vexels.com/media/users/3/144007/isolated/svg/6150d0cfaabb9b2fc29008ee0f8cf099.svg",
+    "nombreProducto": "Ensalada de Atún",
+    "precio": 11.99,
+    "ingredientes": [
+      { "nombre": "Atún enlatado" },
+      { "nombre": "Lechuga" },
+      { "nombre": "Tomate" },
+      { "nombre": "Cebolla" }
+    ]
+  }
+]

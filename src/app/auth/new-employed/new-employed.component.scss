@@ -1,0 +1,82 @@
+ion-content {
+    --background: #fdf8dc;
+  }
+  
+  ion-toolbar {
+    --background: transparent;
+    text-align: center;
+  }
+  
+  .titulo {
+    font-size: 24px;
+    font-weight: bold;
+    color: black;
+    text-align: center;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  ion-card {
+    background: #a7d0f9;
+    width: 85%;
+    max-width: 350px;
+    padding: 16px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  ion-item {
+    --background: transparent;
+    --border-color: #000;
+    margin-bottom: 10px;
+    background: white;
+    border-radius: 10px;
+   
+  }
+  
+  ion-label {
+    font-weight: bold;
+    color: #000;
+  }
+  
+  .checkbox-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+    
+  }
+  
+  .mesero {
+    background: #a79aff;
+    color: white;
+    font-weight: bold;
+    border-radius: 8px;
+  }
+  
+  .cosinero {
+    background: #ffb6c1;
+    color: white;
+    font-weight: bold;
+    border-radius: 8px;
+  }
+  
+  .crear-cuenta {
+    background: #ffbb33;
+    color: white;
+    font-weight: bold;
+    border-radius: 8px;
+    font-size: 16px;
+    margin-top: 12px;
+  }
+  

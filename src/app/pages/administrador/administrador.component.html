@@ -1,0 +1,49 @@
+<ion-content class="fondo-contenedor">
+
+  <ion-grid>
+    <ion-row>
+      <!-- Gráfico para pantallas grandes (se oculta en pantallas pequeñas) -->
+      <!-- class=" ion-hide-md-down" -->
+
+      <!-- ESTA GRAFICA SI ES -->
+      <!-- <ion-col size="12">
+        <div echarts [options]="chartOptions" class="chart"></div>
+      </ion-col> -->
+      <!-- ESTA GRAFICA SI ES  ARRIVBA -->
+
+      <!-- Gráfico para pantallas pequeñas (se oculta en pantallas grandes) -->
+      <!-- <ion-col size="12" class="ion-hide-xl-up">
+              <div echarts [options]="chartOptions2" class="chart"></div>
+            </ion-col> -->
+    </ion-row>
+
+    <ion-row style="display: flex; justify-content: center;">
+
+      <ion-col size="6">
+        <!-- style="height: 50px; width: 25%;" -->
+        <ion-card (click)="productos()">
+          <ion-card-title > PRODUCTOS </ion-card-title>
+        </ion-card>
+      </ion-col>
+      <ion-col size="6">
+        <ion-card (click)="newEmpleado()">
+          <ion-card-title> Agregar empleado </ion-card-title>
+        </ion-card>
+      </ion-col>
+      <ion-col size="6">
+        <ion-card (click)="addProdructo()">
+          <ion-card-title> Agregar producto </ion-card-title>
+        </ion-card>
+      </ion-col>
+      <ion-col size="6">
+        <ion-card (click)="viewEmpleyed()">
+          <ion-card-title> Empleados </ion-card-title>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+
+
+  </ion-grid>
+
+</ion-content>

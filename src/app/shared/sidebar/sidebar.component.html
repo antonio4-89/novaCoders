@@ -1,0 +1,45 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar  class="fondo-contenedor">
+
+    <ion-title>Mi dulce encanto</ion-title>
+  </ion-toolbar>
+
+</ion-header>
+
+<nav class="sidebar-nav" >
+  <ul class="nav-list primary-nav">
+    <li class="nav-item">
+      <ion-menu-toggle>
+        <a routerLink="/cocinero" class="nav-link" [class.active]="isActive('cocinero')">
+          <ion-icon class="nav-icon" name="receipt-outline" />
+          <span class="nav-label">Pedidos</span>
+        </a>
+      </ion-menu-toggle>
+    </li>
+    <li class="nav-item">
+      <ion-menu-toggle>
+        <a routerLink="/productos" class="nav-link" [class.active]="isActive('mesero')">
+          <ion-icon class="nav-icon" name="fast-food-outline" />
+          <span class="nav-label">Productos</span>
+        </a>
+      </ion-menu-toggle>
+    </li>
+    <li class="nav-item">
+      <ion-menu-toggle>
+        <a routerLink="/finalizados" class="nav-link" [class.active]="isActive('finalizados')">
+          <ion-icon class="nav-icon" name="sparkles-outline" />
+          <span class="nav-label">Finalizados</span>
+        </a>
+      </ion-menu-toggle>
+    </li>
+    <li class="nav-item">
+      <ion-menu-toggle>
+        <a routerLink="/ventas" class="nav-link" [class.active]="isActive('/ventas')">
+          <ion-icon class="nav-icon" name="trending-up-outline"></ion-icon>
+          <span class="nav-label">Ventas</span>
+        </a>
+      </ion-menu-toggle>
+    </li>
+
+  </ul>
+</nav>

@@ -1,0 +1,104 @@
+.sidebar {
+    position: flex;
+    width: 270px;
+    margin: 16px;
+    border-radius: 16px;
+    height: calc(100vh - 32px);
+    transition: all 0.4s ease;
+  }
+  .sidebar.collapsed {
+    width: 85px;
+  }
+  .sidebar .sidebar-header {
+    display: flex;
+    position: relative;
+    padding: 25px 20px;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .sidebar-header .toggler {
+    height: 35px;
+    width: 35px;
+    color: #fbbf24;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    background: #fef9c3;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    transition: 0.4s ease;
+  }
+  .sidebar-header .sidebar-toggler {
+    position: absolute;
+    right: 20px;
+  }
+  .sidebar-header .menu-toggler {
+    display: none;
+  }
+  
+  .sidebar-header .toggler ng-icon {
+    font-size: 1.75rem;
+    transition: 0.4s ease;
+    position: relative;
+  }
+  
+  .sidebar.collapsed .sidebar-header .toggler ng-icon {
+    transform: rotate(180deg);
+  }
+  
+  .sidebar-nav .nav-list {
+    list-style: none;
+    display: flex;
+    gap: 4px;
+    padding: 0 15px;
+    flex-direction: column;
+    transition: 0.4s ease;
+  }
+  
+  .sidebar-nav .nav-link {
+    color: #000000;
+    display: flex;
+    gap: 12px;
+    white-space: nowrap;
+    border-radius: 8px;
+    padding: 12px 15px;
+    align-items: center;
+    text-decoration: none;
+    transition: 0.4s ease;
+    .nav-icon{
+      display: inline-table;
+      font-size: 24px;
+      color: #040403;
+      cursor: pointer;
+    }
+  }
+  .sidebar.collapsed .sidebar-nav .nav-link {
+    border-radius: 12px;
+  }
+  .sidebar .sidebar-nav .nav-link .nav-label {
+    transition: opacity 0.3s ease;
+  }
+  .sidebar.collapsed .sidebar-nav .nav-link .nav-label{
+    opacity: 0;
+    pointer-events: none;
+  }
+  .sidebar-nav .nav-link:hover {
+    color: #fbbf24;
+    background: #fef9c3;
+  }
+  .sidebar-nav .nav-item {
+    position: relative;
+  }
+  
+  .nav-link.active {
+    background: #fde047;
+    color: #422006 !important;
+    font-size: 22px;
+    ng-icon{
+      background: #fbbf24 !important;
+      border-radius: 5px;
+      color: #fef9c3 !important;
+    }
+  }
