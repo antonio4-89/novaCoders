@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalController } from '@ionic/angular';
-import { ApiService } from 'src/app/services/api.service';
+import { ModalController, PopoverController, AlertController } from '@ionic/angular';
+
+import { Producto } from 'src/app/interfaces/producto.interface';
+import { ApiGeneral } from 'src/app/services/apiGeneral.service';
 
 @Component({
   selector: 'app-productos',
@@ -8,32 +10,30 @@ import { ApiService } from 'src/app/services/api.service';
   styleUrls: ['./productos.component.scss'],
   standalone: false
 })
-export class ProductosComponent  implements OnInit {
+export class ProductosComponent implements OnInit {
+  productos: Producto[] = [];
+  ingredientes: Producto[] = []
+  // p: number = 1;
+  // textoBuscar: string = "";
+  // productosAll: Producto[] = [];
 
-  // collection: Producto[] = [] ;
-  collectionOriginal: any = [];
+  constructor(
+    public modalController: ModalController,
+    private apiGeneral: ApiGeneral 
+    ) { }
 
-  constructor( 
-    private apiService: ApiService,
-    private modal: ModalController
-   ) { }
+  ngOnInit() {
 
+this.apiGeneral.getCollectionChanges('producto').subscribe(
+  resp => { 
+    console.log(resp)
+    this.productos = resp;
+    this.ingredientes = resp[0].ingredientes
+    console.log( this.ingredientes )
+   }
+)
 
-ngOnInit(): void {
-this.apiService.getProductos()
-// .subscribe( (productos: Producto[]) => {this.collectionOriginal.push( ...productos )} )
-.subscribe( (productos: any[]) => {this.collectionOriginal.push( ...productos )} )
-}
+  }
 
-// async productoShop( producto: Producto ) {
-//   const modals = await this.modal.create({
-//     component: ProductoComponent,
-//     componentProps: { producto },
-//     backdropDismiss: false,
-//     cssClass: 'modal2',
-//   });
-//   await modals.present();
-// }
-
-
+  
 }

@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { importProvidersFrom, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
 
@@ -17,6 +17,7 @@ import { getAuth, provideAuth } from '@angular/fire/auth';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { getStorage, provideStorage } from '@angular/fire/storage';
 import { NewEmployedComponent } from './auth/new-employed/new-employed.component';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
@@ -33,20 +34,22 @@ import { NewEmployedComponent } from './auth/new-employed/new-employed.component
     SharedModule,
     PagesModule,
     HttpClientModule,
+    
   ],
 
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    provideFirebaseApp(() =>
-      initializeApp({
-        projectId: 'novacoders-b3936',
-        appId: '1:456963770694:web:8068982be09245cd803d47',
-        storageBucket: 'novacoders-b3936.firebasestorage.app',
-        apiKey: 'AIzaSyDFk5NE2wkJ1FyU3MsMJ-9nSYN-10liRTU',
-        authDomain: 'novacoders-b3936.firebaseapp.com',
-        messagingSenderId: '456963770694',
-      })
-    ),
+    provideFirebaseApp( () => initializeApp( environment.firebaseConfig )),
+    // provideFirebaseApp(() =>
+    //   initializeApp({
+    //     projectId: 'novacoders-b3936',
+    //     appId: '1:456963770694:web:8068982be09245cd803d47',
+    //     storageBucket: 'novacoders-b3936.firebasestorage.app',
+    //     apiKey: 'AIzaSyDFk5NE2wkJ1FyU3MsMJ-9nSYN-10liRTU',
+    //     authDomain: 'novacoders-b3936.firebaseapp.com',
+    //     messagingSenderId: '456963770694',
+    //   })
+    // ),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
     provideStorage(() => getStorage()),

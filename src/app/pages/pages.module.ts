@@ -16,8 +16,6 @@ IonicModule.forRoot()
     exports: [
         AdministradorComponent,
         ProductosComponent
-
-
     ]
 })
 
