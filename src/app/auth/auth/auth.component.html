@@ -21,7 +21,7 @@
         <ion-input formControlName="password" type="password" labelPlacement="floating" label="Contraseña"  placeholder="Contraseña"  fill="outline"></ion-input>
       </ion-col>
       <p class="forgot-password">
-        ¿Olvidó su contraseña? <a href="#">Ingrese aquí</a>
+        ¿Olvidó su contraseña? <a (click)="resetPassword()">Ingrese aquí</a>
       </p>
       
       <button class="cta" type="submit" [disabled]="!sweetForm.valid">
