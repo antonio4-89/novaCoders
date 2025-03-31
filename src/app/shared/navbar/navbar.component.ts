@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Auth, signOut } from '@angular/fire/auth';
 import { Router } from '@angular/router';
 
 @Component({
@@ -7,16 +8,22 @@ import { Router } from '@angular/router';
   styleUrls: ['./navbar.component.css'],
   standalone: false
 })
-export class NavbarComponent implements OnInit {
+export class NavbarComponent  {
 
-  constructor( private route: Router ) { }
+  constructor(
+    private auth: Auth,  // Inyecta el servicio de Auth de Firebase
+    private router: Router
+  ) {}
 
-  ngOnInit() {
+  async salir() {
+    try {
+      await signOut(this.auth);  // Cierra sesión en Firebase
+      this.router.navigate(['/sign-in']);  // Redirige al login
+      // this.limpiarFormulario();  // Opcional: Limpia datos del formulario
+    } catch (error) {
+      console.error('Error al cerrar sesión:', error);
+    }
   }
 
-  salir(){
-    sessionStorage.clear()
-    this.route.navigate(['sign-in'])
-  }
 
 }
