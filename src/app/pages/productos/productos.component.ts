@@ -12,10 +12,8 @@ import { ApiGeneral } from 'src/app/services/apiGeneral.service';
 })
 export class ProductosComponent implements OnInit {
   productos: Producto[] = [];
-  ingredientes: Producto[] = []
-  // p: number = 1;
-  // textoBuscar: string = "";
-  // productosAll: Producto[] = [];
+  ingredientes: string[] = []; 
+  addProducto!: Producto;
 
   constructor(
     public modalController: ModalController,
@@ -28,10 +26,13 @@ this.apiGeneral.getCollectionChanges('producto').subscribe(
   resp => { 
     console.log(resp)
     this.productos = resp;
-    this.ingredientes = resp[0].ingredientes
-    console.log( this.ingredientes )
-   }
-)
+
+    this.ingredientes = resp.reduce((acc: string[], producto) => {
+      return acc.concat(producto.ingredientes || []);
+    }, []);
+    
+    console.log('Todos los ingredientes:', this.ingredientes);
+  });
 
   }
 

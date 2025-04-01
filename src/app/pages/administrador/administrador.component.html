@@ -6,9 +6,9 @@
       <!-- class=" ion-hide-md-down" -->
 
       <!-- ESTA GRAFICA SI ES -->
-      <!-- <ion-col size="12">
-        <div echarts [options]="chartOptions" class="chart"></div>
-      </ion-col> -->
+      <ion-col size="12">
+        <div echarts [options]="chartOptions" class="chart"> SI JALA?</div>
+      </ion-col>
       <!-- ESTA GRAFICA SI ES  ARRIVBA -->
 
       <!-- Gráfico para pantallas pequeñas (se oculta en pantallas grandes) -->
@@ -40,6 +40,10 @@
           <ion-card-title> Empleados </ion-card-title>
         </ion-card>
       </ion-col>
+
+      <div *ngIf="loading">
+        <ion-spinner name="bubbles"></ion-spinner>
+      </div>
     </ion-row>
 
 

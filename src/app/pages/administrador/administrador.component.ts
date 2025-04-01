@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { EChartsOption } from 'echarts';
 import { NewEmployedComponent } from 'src/app/auth/new-employed/new-employed.component';
+import { AddProductoComponent } from 'src/app/components/add-producto/add-producto.component';
 
 @Component({
   selector: 'app-administrador',
@@ -12,11 +12,10 @@ import { NewEmployedComponent } from 'src/app/auth/new-employed/new-employed.com
 })
 export class AdministradorComponent  implements OnInit {
 
-
-
   isLargeScreen: boolean = true;
+  loading: boolean = false
 
-  chartOptions: EChartsOption = {
+  chartOptions: EChartsOption  = {
     tooltip: {
       trigger: 'item'
     },
@@ -143,20 +142,13 @@ export class AdministradorComponent  implements OnInit {
   // }
 
   constructor(
-    // private breakpointObserver: BreakpointObserver,
-    private route: Router,
     private modal: ModalController
   ) {
-    // this.breakpointObserver.observe([Breakpoints.Handset]).subscribe(result => {
-    //   this.isLargeScreen = !result.matches; // Si es teléfono, es false
-
-    // });
   }
   ngOnInit(): void {
     throw new Error('Method not implemented.');
   }
   async productos() {
-
     // const modal = await this.modal.create({
     //   component: ProductoAdminComponent,
     //   backdropDismiss: true,
@@ -164,18 +156,23 @@ export class AdministradorComponent  implements OnInit {
     // });
     // await modal.present()
   }
-
   async newEmpleado() {
     const modal = await this.modal.create({
       component: NewEmployedComponent,
-      backdropDismiss: true,
-      cssClass: 'modal2'
+      backdropDismiss: false,
+      cssClass: 'modal3'
     });
     await modal.present()
   }
 
-  addProdructo(){
 
+ async addProdructo(){
+    const modal = await this.modal.create({
+      component: AddProductoComponent,
+      backdropDismiss: false,
+      cssClass: 'modal3', 
+    })
+    await modal.present()
   }
 
   viewEmpleyed(){

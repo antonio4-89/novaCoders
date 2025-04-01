@@ -18,6 +18,8 @@ import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { getStorage, provideStorage } from '@angular/fire/storage';
 import { NewEmployedComponent } from './auth/new-employed/new-employed.component';
 import { environment } from 'src/environments/environment';
+import { NgxEchartsModule } from 'ngx-echarts';
+import { ComponentsModule } from './components/components.module';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,12 @@ import { environment } from 'src/environments/environment';
     ReactiveFormsModule,
     SharedModule,
     PagesModule,
+    ComponentsModule,
     HttpClientModule,
+    NgxEchartsModule.forRoot({
+      echarts: () => ('echarts')
+    }),
+    
     
   ],
 

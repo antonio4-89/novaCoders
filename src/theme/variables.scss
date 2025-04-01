@@ -6,3 +6,7 @@
     --border-radius: 10px;
   }
   
+  .modal3 {
+    --background: transparent;
+    --box-shadow: none; // Esto elimina la sombra del modal
+  }

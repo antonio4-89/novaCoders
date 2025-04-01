@@ -9,21 +9,10 @@
     <ion-card-subtitle> $ {{ item.precio }} </ion-card-subtitle>
   </ion-card-header>
   <!--  -->
-
   <ion-card-content>
 
-
-    <ion-accordion-group>
-      <ion-accordion value="first">
-        <ion-item slot="header" color="light">
-          <ion-label> Ingredientes </ion-label>
-        </ion-item>
-        <div class="ion-padding" slot="content" > {{ item.ingredientes[0] }} </div>
-      </ion-accordion>
-    </ion-accordion-group>
+    {{ item.ingredientes }}
     <ion-button class="fondoProducto" style="width: 97%;"></ion-button>
-
-
   </ion-card-content>
 </ion-card>
 

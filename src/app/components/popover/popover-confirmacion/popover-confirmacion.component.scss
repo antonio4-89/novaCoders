@@ -1,0 +1,28 @@
+ion-content {
+    font-size: 13px;
+}
+
+.centrar {
+    text-align: center;
+    
+}
+
+.boton {
+    --background: #c44444;
+    --border-radius: 25px;
+    --color: #fff;
+    width: 12em;
+}
+
+.boton-cancelar-ppvr {
+    --background: white;
+    --color: #2196F3;
+    --border-radius: 25px ;
+    --border-style: solid;
+    width: 12em;
+}
+
+// .margen {
+//     margin-left: 10px;
+//     margin-right: 10px;
+// }

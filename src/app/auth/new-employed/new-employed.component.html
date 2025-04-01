@@ -1,57 +1,38 @@
-<ion-content>
-  <div class="container">
-    <!-- Título con icono -->
-    <!-- <h2 class="titulo">
-      <ion-icon name="clipboard-outline"></ion-icon> Registro.
-    </h2> -->
-    <!-- Tarjeta del formulario -->
-    <ion-card>
-      <ion-card-content>
-        <form action="" [formGroup]="newEmployed" (ngSubmit)="enviarForm()">
+<ion-card>
+  <h2 class="titulo">
+    <ion-icon name="person-add-outline"></ion-icon> Crear Cuenta
+  </h2>
+  <ion-card-header>
+    <ion-card-title>Registro de Usuario</ion-card-title>
+    <ion-card-subtitle>Ingresa tus datos básicos</ion-card-subtitle>
+  </ion-card-header>
+  
+  <ion-card-content>
+    <form action="" [formGroup]="newEmployed" (ngSubmit)="enviarForm()">
+      <!-- Correo -->
+      <ion-item lines="full" class="input-item">
+        <ion-icon slot="start" name="mail-outline"></ion-icon>
+        <ion-label position="floating">Correo Electrónico</ion-label>
+        <ion-input formControlName="email" type="email" required></ion-input>
+      </ion-item>
 
-        <!-- Nombre -->
-        <!-- <ion-item>
-          <ion-label position="stacked">Nombre</ion-label>
-          <ion-input type="text"></ion-input>
-        </ion-item> -->
+      <!-- Contraseña -->
+      <ion-item lines="full" class="input-item">
+        <ion-icon slot="start" name="lock-closed-outline"></ion-icon>
+        <ion-label position="floating">Contraseña</ion-label>
+        <ion-input formControlName="password" type="password" required></ion-input>
+      </ion-item>
 
-        <!-- Apellidos -->
-        <!-- <ion-item>
-
-          <ion-label position="stacked">Apellidos</ion-label>
-          <ion-input type="text"></ion-input>
-        </ion-item> -->
-
-        <!-- Correo -->
-        <ion-item>
-          <ion-label position="stacked">Correo</ion-label>
-          <ion-input formControlName="email" type="email"></ion-input>
-        </ion-item>
-
-        <!-- Contraseña -->
-        <ion-item>
-          <ion-label position="stacked">Contraseña</ion-label>
-          <ion-input formControlName="password" type="password"></ion-input>
-        </ion-item>
-
-        <!-- Confirmar Contraseña -->
-        <!-- <ion-item>
-          <ion-label position="stacked">Confirmar contraseña</ion-label>
-          <ion-input type="password"></ion-input>
-        </ion-item> -->
-
-        <!-- Opciones Mecero y Cosinero -->
-        <!-- <div class="checkbox-container">
-          <ion-button class="mecero">Mesero</ion-button>
-          <ion-button class="cosinero">Cosinero</ion-button>
-        </div> -->
-
-        <!-- Botón Crear Cuenta -->
-        <ion-button type="submit" expand="full" color="yellow" class="crear-cuenta">Crear Cuenta.</ion-button>
-
-      </form>
-
-      </ion-card-content>
-    </ion-card>
-  </div>
-</ion-content>
+      <!-- Botón Crear Cuenta -->
+      <ion-button 
+        type="submit" 
+        expand="block" 
+        color="primary" 
+        class="crear-cuenta"
+        [disabled]="newEmployed.invalid">
+        <ion-icon slot="start" name="create-outline"></ion-icon>
+        Crear Cuenta
+      </ion-button>
+    </form>
+  </ion-card-content>
+</ion-card>

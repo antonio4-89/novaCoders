@@ -1,0 +1,25 @@
+<ion-content>
+
+  <ion-grid class="margen centrar">    
+    <!-- <i class="fas fa-exclamation-triangle"  *ngIf="tipoPopover=='Alert'" style="color: yellow;"></i>  -->
+    <ion-row style="justify-content: center;">
+      <h4 [style.color]="tipoPopover == 'DELETE' ? 'var(--ion-color-danger)':'var(--ion-color-primary-shade)'">{{tituloMensaje}}</h4>
+      <span>
+        {{mensaje}}
+      </span>
+    </ion-row>
+      <br>
+    <ion-row>
+      <ion-col >        
+        <ion-button class="boton-cancelar-ppvr" (click)="confirmar()">Aceptar</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col >        
+        <ion-button class="boton" (click)="cancelar()">Cancelar</ion-button>
+      </ion-col>
+    </ion-row>
+  
+  </ion-grid>
+
+</ion-content>

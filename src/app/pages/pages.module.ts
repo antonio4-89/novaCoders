@@ -3,6 +3,7 @@ import { AdministradorComponent } from './administrador/administrador.component'
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 import { ProductosComponent } from './productos/productos.component';
+import { NgxEchartsModule } from 'ngx-echarts';
 
 @NgModule({
     declarations: [
@@ -11,7 +12,10 @@ import { ProductosComponent } from './productos/productos.component';
     ],
     imports: [
 CommonModule,
-IonicModule.forRoot()
+IonicModule.forRoot(),
+    NgxEchartsModule.forRoot({
+      echarts: () => ('echarts')
+    })
     ],
     exports: [
         AdministradorComponent,
