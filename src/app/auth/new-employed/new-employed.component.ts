@@ -10,47 +10,46 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./new-employed.component.scss'],
   standalone: false
 })
-export class NewEmployedComponent  implements OnInit {
+export class NewEmployedComponent implements OnInit {
 
-  
+  newEmployed!: FormGroup;
+
   constructor( 
     private fb: FormBuilder,
     private authService: AuthService,
     private route: Router,
     private modalCtrl: ModalController
-   ) { }
-
-  newEmployed!: FormGroup
+  ) { }
 
   ngOnInit() {
-   this.newEmployed = this.fb.group({
-      email: ['', [Validators.required]],
+    this.newEmployed = this.fb.group({
+      email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required]
-  
-    })
+    });
   }
 
- async enviarForm(){
-// 
-if (this.newEmployed.invalid) return;
+  async enviarForm() {
+    if (this.newEmployed.invalid) return;
     
+    try {
+      const { email, password } = this.newEmployed.value; 
+      if (!email || !password) return;
 
-try{
-const { email, password} = this.newEmployed.value ; 
-
-if (!email || !password) return;
-
-console.log({email, password})
-
-await this.authService.signUp({email, password})
-    // Alerta exitosa
-// this._router.navigateByUrl('/tasks')
-this.modalCtrl.dismiss()
-
-} catch(error){
-// Alerta erronea
-
+      console.log({email, password});
+      await this.authService.signUp({email, password});
+      this.modalCtrl.dismiss();
+    } catch(error) {
+      console.error('Error en el registro:', error);
+      // Aquí puedes agregar lógica para mostrar un mensaje de error al usuario
+    }
   }
 
-}
+  cancelarForm() {
+    // Limpiar el formulario
+    this.newEmployed.reset();
+    // Cerrar el modal
+    this.modalCtrl.dismiss();
+    // Alternativamente, podrías navegar a otra página:
+    // this.route.navigate(['/login']);
+  }
 }

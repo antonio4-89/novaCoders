@@ -63,20 +63,33 @@ ion-card-subtitle {
   transform: translateY(-2px);
 }
 
+.button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+
 .crear-cuenta {
   --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   --padding-top: 15px;
   --padding-bottom: 15px;
-  margin-top: 20px;
   transition: all 0.3s ease;
 }
 
-.crear-cuenta:hover {
+.cancelar {
+  --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  --padding-top: 15px;
+  --padding-bottom: 15px;
+  transition: all 0.3s ease;
+}
+
+.crear-cuenta:hover, .cancelar:hover {
   --box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
   transform: translateY(-2px);
 }
 
-.crear-cuenta:active {
+.crear-cuenta:active, .cancelar:active {
   transform: translateY(0);
 }
 
@@ -84,15 +97,4 @@ ion-card-subtitle {
 ion-item.invalid {
   --border-color: var(--ion-color-danger);
   --highlight-color-focused: var(--ion-color-danger);
-}
-
-/* Efecto de carga */
-@keyframes pulse {
-  0% { opacity: 1; }
-  50% { opacity: 0.5; }
-  100% { opacity: 1; }
-}
-
-.loading {
-  animation: pulse 1.5s infinite;
 }

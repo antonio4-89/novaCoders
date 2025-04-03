@@ -1,16 +1,112 @@
-<ion-card>
-
-<form action="" [formGroup]="addProducto" (ngSubmit)="enviarProducto()">
-<ion-input formControlName="nombreProducto" label="NOmbre producto" labelPlacement="floating" type="text" ></ion-input>
-<ion-input formControlName="cantidad" label="Cantidad" labelPlacement="floating"              type="number" ></ion-input>
-<ion-input formControlName="precio" label="precio" labelPlacement="floating"                    type="number" ></ion-input>
-<ion-input formControlName="disponible" label="Disponible" labelPlacement="floating"        ></ion-input>
-<ion-input formControlName="ingredientes" label="Ingredientes" labelPlacement="floating"    ></ion-input>
-
-
-
-<ion-button type="submit">Crear</ion-button>
-<ion-button (click)="cancelar()">Cancelar</ion-button>
-</form>
-
+<ion-card class="form-card">
+  <div class="form-header">
+    <h2 class="form-title">Nuevo Producto</h2>
+    <div class="form-subtitle">Complete los datos del producto</div>
+  </div>
+  
+  <div class="form-scroll-container">
+    <form action="" [formGroup]="addProducto" (ngSubmit)="enviarProducto()">
+      <div class="form-group">
+        <label class="input-label">Nombre del producto</label>
+        <ion-input
+          formControlName="nombreProducto"
+          labelPlacement="floating"
+          type="text"
+          class="custom-input"
+          placeholder="Ingrese nombre">
+          <ion-icon name="restaurant-outline" slot="start"></ion-icon>
+        </ion-input>
+      </div>
+      
+      <div class="form-group">
+        <label class="input-label">Cantidad</label>
+        <ion-input
+          formControlName="cantidad"
+          labelPlacement="floating"
+          type="number"
+          class="custom-input"
+          placeholder="Ingrese cantidad">
+          <ion-icon name="basket-outline" slot="start"></ion-icon>
+        </ion-input>
+      </div>
+      
+      <div class="form-group">
+        <label class="input-label">Precio</label>
+        <ion-input
+          formControlName="precio"
+          labelPlacement="floating"
+          type="number"
+          class="custom-input"
+          placeholder="Ingrese precio">
+          <ion-icon name="pricetag-outline" slot="start"></ion-icon>
+        </ion-input>
+      </div>
+      
+      <div class="form-group">
+        <label class="input-label">Disponibilidad</label>
+        <ion-select
+          formControlName="disponible"
+          labelPlacement="floating"
+          class="custom-input"
+          placeholder="Seleccione disponibilidad">
+          <ion-icon name="checkbox-outline" slot="start"></ion-icon>
+          <ion-select-option value="true">Disponible</ion-select-option>
+          <ion-select-option value="false">No disponible</ion-select-option>
+        </ion-select>
+      </div>
+      
+      <!-- Campo para número de ingredientes con formControl -->
+      <div class="form-group">
+        <label class="input-label">Número de ingredientes</label>
+        <ion-input
+          formControlName="numeroIngredientes"
+          labelPlacement="floating"
+          type="number"
+          class="custom-input"
+          placeholder="Ingrese cantidad de ingredientes"
+          min="0"
+          (ionChange)="onNumeroIngredientesChange($event)">
+          <ion-icon name="calculator-outline" slot="start"></ion-icon>
+        </ion-input>
+      </div>
+      
+      <!-- Campo oculto para almacenar la cadena final de ingredientes -->
+      <input type="hidden" formControlName="ingredientes">
+      
+      <!-- Lista de ingredientes que aparece solo cuando hay ingredientes -->
+      <ng-container *ngIf="numeroIngredientes > 0">
+        <div class="form-group ingredientes-group">
+          <label class="input-label">Ingredientes</label>
+          <div class="ingredientes-container">
+            <div class="ingrediente-item" *ngFor="let ingrediente of ingredientesArray; let i = index">
+              <div class="ingrediente-input-container">
+                <ion-input
+                  type="text"
+                  class="custom-input"
+                  [value]="ingredientesArray[i]"
+                  placeholder="Ingrediente {{i+1}}"
+                  (ionChange)="onIngredienteChange($event, i)">
+                  <ion-icon name="leaf-outline" slot="start"></ion-icon>
+                </ion-input>
+                <ion-button fill="clear" color="danger" (click)="eliminarIngrediente(i)" class="delete-btn">
+                  <ion-icon name="trash-outline"></ion-icon>
+                </ion-button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+      
+      <div  class="button-container">
+        <ion-button expand="block" type="submit" class="submit-button">
+          <ion-icon name="checkmark-circle-outline" slot="start"></ion-icon>
+          <span class="button-text">GUARDAR PRODUCTO</span>
+        </ion-button>
+        <ion-button expand="block" (click)="cancelar()" class="cancel-button">
+          <ion-icon name="arrow-back-outline" slot="start"></ion-icon>
+          <span class="button-text">CANCELAR</span>
+        </ion-button>
+      </div>
+    </form>
+  </div>
 </ion-card>

@@ -1,22 +1,30 @@
-<ion-grid>
-  <ion-row>
-    <!-- size="4" sizeXl="6" sizeLg="4" sizeMd="3" sizeSm="6" -->
-    <ion-col *ngFor="let item of productos" sizeXl="3" sizeLg="4" sizeMd="6" sizeSm="6" >
-
-<ion-card color="warning" >
-  <ion-card-header>
-    <ion-card-title> {{ item.nombre }} </ion-card-title>
-    <ion-card-subtitle> $ {{ item.precio }} </ion-card-subtitle>
-  </ion-card-header>
-  <!--  -->
-  <ion-card-content>
-
-    {{ item.ingredientes }}
-    <ion-button class="fondoProducto" style="width: 97%;"></ion-button>
-  </ion-card-content>
-</ion-card>
-
-
-</ion-col>
-</ion-row>
-</ion-grid>
+<ion-content>
+  <div class="container">
+    <ion-grid>
+      <ion-row>
+        <ion-col 
+          *ngFor="let item of productos" 
+          size="12" size-sm="6" size-md="6" size-lg="4" size-xl="3"
+          class="ion-no-padding">
+          <ion-card class="product-card">
+            <div class="product-icon">
+              <ion-icon name="restaurant-outline"></ion-icon>
+            </div>
+            
+            <ion-card-header>
+              <ion-card-title>{{ item.nombre }}</ion-card-title>
+              <ion-card-subtitle>$ {{ item.precio }}</ion-card-subtitle>
+            </ion-card-header>
+            
+            <ion-card-content>
+              <div class="ingredient-list">
+                {{ item.ingredientes }}
+              </div>
+              <ion-button class="fondoProducto" expand="block">Ver detalles</ion-button>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>

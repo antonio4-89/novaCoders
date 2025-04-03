@@ -1,0 +1,131 @@
+:host {
+    ion-content {
+      --background: #cdffd9;
+    }
+  
+    .container {
+      padding: 10px;
+      width: 100%;
+    }
+  
+    ion-grid {
+      width: 100%;
+      padding: 0;
+    }
+  
+    ion-row {
+      margin: 0 -5px;
+    }
+  
+    ion-col {
+      padding: 5px;
+    }
+  
+    .product-card {
+      margin: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      overflow: hidden;
+      background-color: #ffffff;
+      display: flex;
+      flex-direction: column;
+    }
+  
+    .product-icon {
+      height: 60px;
+      background-color: #024daf;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      
+      ion-icon {
+        font-size: 32px;
+        color: #333;
+      }
+    }
+  
+    ion-card-header {
+      padding: 12px;
+      background-color: #95bbfe;
+      flex-shrink: 0;
+    }
+  
+    ion-card-title {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 4px;
+      color: #333;
+      text-align: center;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  
+    ion-card-subtitle {
+      font-size: 15px;
+      color: #e91e63;
+      font-weight: bold;
+      text-align: center;
+    }
+  
+    ion-card-content {
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+  
+    .ingredient-list {
+      margin-bottom: 12px;
+      font-size: 14px;
+      color: #555;
+      flex-grow: 1;
+      text-align: center;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+    }
+  
+    .fondoProducto {
+      --background: #ffcb42;
+      --color: #000;
+      --border-radius: 8px;
+      margin-top: auto;
+      height: 36px;
+      font-size: 14px;
+      font-weight: 500;
+    }
+  
+    /* Estilos específicos para dispositivos móviles */
+    @media (max-width: 576px) {
+      .container {
+        padding: 5px;
+      }
+      
+      ion-col {
+        padding: 5px;
+      }
+      
+      ion-card-title {
+        font-size: 14px;
+      }
+      
+      ion-card-subtitle {
+        font-size: 13px;
+      }
+      
+      .ingredient-list {
+        font-size: 12px;
+        -webkit-line-clamp: 2;
+      }
+      
+      .fondoProducto {
+        height: 32px;
+        font-size: 12px;
+      }
+    }
+  }
